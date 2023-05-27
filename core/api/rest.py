@@ -26,8 +26,7 @@ class BaseAPIViewSet(viewsets.ViewSet):
 
     def create(self, request):
         try:
-            user = 1 if not request.user.id else request.user.id
-            data = self.service.cadastrar(request, user)
+            data = self.service.cadastrar(request)
             serializer = self.serializer_class(data, many=False)
             return Response(serializer.data)
         except Exception as exc:
