@@ -24,3 +24,6 @@ Ou caso não tenha o docker instalado, mas será necessario ter o python instala
 
     4-Rodar a aplicação django, (sera htt:/http://127.0.0.1:8000/)
         $ python manage.py runserver
+
+    5-Teste unitario:
+        $ pytest
