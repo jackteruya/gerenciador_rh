@@ -27,3 +27,7 @@ Ou caso não tenha o docker instalado, mas será necessario ter o python instala
 
     5-Teste unitario:
         $ pytest
+    
+    6-Usuario para autenticação:
+        username: admin
+        password: 123456
