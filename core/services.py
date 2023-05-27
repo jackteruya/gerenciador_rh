@@ -8,10 +8,10 @@ class BaseService:
         self.repository = repository
         self.model = None
 
-    def cadastrar(self, request: Request, user_id):
+    def cadastrar(self, request: Request):
         data = request.data
-        data['criado_por_id'] = user_id
-        data['atualizado_por_id'] = user_id
+        data['criado_por_id'] = request.user.id
+        data['atualizado_por_id'] = request.user.id
         return self.repository(self.model).criar(request.data)
 
     def listar_todos(self):

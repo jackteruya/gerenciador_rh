@@ -9,7 +9,7 @@ class BaseRepository:
         try:
             return self.model.objects.get(id=id)
         except self.model.DoesNotExist:
-            return False
+            raise NotFound()
 
     def buscar_query(self, query):
         return self.model.objects.filter(query)
