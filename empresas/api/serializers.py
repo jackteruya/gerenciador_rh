@@ -13,4 +13,4 @@ class EmpresasSerializer(BaseSeralizer):
             'pais',
             'ativo',
         ]
-        read_only_fields = ['ativo', ]
+        read_only_fields = ['id', 'ativo', ]

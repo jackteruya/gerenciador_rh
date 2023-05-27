@@ -5,11 +5,14 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
+from core.custompagination import Pagination
+
 
 class BaseAPIViewSet(viewsets.ViewSet):
     permission_classes = (IsAuthenticated, )
     service = None
     serializer_class = None
+    # pagination_class = Pagination
 
     def retrieve(self, request, pk=None):
         try:

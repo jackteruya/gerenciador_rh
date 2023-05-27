@@ -10,27 +10,34 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('departamentos', '0001_initial'),
         ('empresas', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Departamentos',
+            name='Funcionarios',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('data_criacao', models.DateTimeField(auto_now_add=True)),
                 ('data_atualizacao', models.DateTimeField(auto_now=True)),
                 ('ativo', models.BooleanField(default=True)),
-                ('centro_custo', models.SmallIntegerField()),
                 ('nome', models.CharField(max_length=128)),
-                ('codigo_integracao', models.CharField(max_length=128)),
+                ('sobrenome', models.CharField(max_length=128)),
+                ('email', models.EmailField(max_length=128)),
+                ('telefone', models.CharField(max_length=128)),
+                ('data_nascimento', models.DateField()),
+                ('data_ingresso', models.DateField()),
+                ('data_desligamento', models.CharField(blank=True, null=True)),
+                ('cidade', models.CharField(max_length=128)),
                 ('atualizado_por', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='+', to=settings.AUTH_USER_MODEL)),
                 ('criado_por', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='+', to=settings.AUTH_USER_MODEL)),
+                ('departamento', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='departamentos.departamentos')),
                 ('empresa', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='empresas.empresas')),
             ],
             options={
-                'db_table': 'departamentos',
+                'db_table': 'funcionarios',
             },
         ),
     ]

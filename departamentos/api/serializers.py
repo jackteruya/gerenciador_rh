@@ -13,4 +13,4 @@ class DepartamentosSerializer(BaseSeralizer):
             'empresa_id',
             'ativo',
         ]
-        read_only_fields = ['ativo', ]
+        read_only_fields = ['id', 'ativo', ]
