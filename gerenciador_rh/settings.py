@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'core',
     'empresas',
+    'departamentos',
 
 ]
 
@@ -101,8 +102,10 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': 'database',
-        'PORT': '5432',
+        # 'HOST': 'database',
+        # 'PORT': '5432',
+        'HOST': 'localhost',
+        'PORT': '5433',
     }
 }
 
